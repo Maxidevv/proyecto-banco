@@ -79,13 +79,13 @@ Consulte el archivo `diagramaClasesUML.wsd` para visualizar la estructura de cla
 
 - El proyecto implementa herencia.
 - Se utiliza encapsulación para proteger los datos sensibles.
-- El sistema valida todas las operaciones financieras.
+- El sistema valida todas las operaciones.
 - Se mantiene un registro centralizado de todas las transacciones
 
 ## Licencia
 Proyecto académico
 
-## Autor/es
+## Autores
 Maxi Moncada
 Matias Moyano
 Maximo Zalazar
