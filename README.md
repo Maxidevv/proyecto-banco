@@ -85,8 +85,8 @@ Consulte el archivo `diagramaClasesUML.wsd` para visualizar la estructura de cla
 ## Licencia
 Proyecto académico
 
-## Autores
-Maxi Moncada
-Matias Moyano
-Maximo Zalazar
-Farid Darull
+## Integrantes del Equipo
+- Maxi Moncada (maxilucianomoncada@gmail.com)
+- Matias Moyano (matiasmoyanobustos@gmail.com)
+- Maximo Zalazar (mzalazar474@alumnos.iua.edu.ar)
+- Farid Darull (pone el mail panita farid)
