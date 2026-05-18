@@ -1,0 +1,65 @@
+@startuml banco
+skinparam linetype ortho
+
+class Persona {
+    -int dni
+    -String nombre
+    -int añoIngreso
+    -boolean estado
+}
+
+class Cliente {
+    -String tipoCliente
+
+}
+
+class Empleado {
+    -String tipoEmpleado
+}
+
+class Cuenta {
+    -int numeroCuenta
+    -LocalDate fechaApertura
+}
+
+class CajaDeAhorro {
+    -float pesos
+    -float dolares
+}
+
+class Credito {
+    -String tipoTarjeta
+}
+
+class Transaccion {
+    -int id
+    -String tipo
+    -float monto
+    -LocalDateTime fecha
+    -int numeroCuenta
+    -String moneda
+}
+
+class Registro {
+    -datoCuenta.txt
+    -transaccionCuenta.txt
+}
+
+class Banco {
+    -ArrayList<Persona> personas
+}
+
+' Relaciones de herencia
+Persona <|-- Cliente
+Persona <|-- Empleado
+Cuenta <|-- CajaDeAhorro
+Cuenta <|-- Credito
+
+' Relaciones de asociación
+Cuenta "*" -- "1" Persona : tiene
+CajaDeAhorro "1  " -- "*" Transaccion : tiene<
+Registro "1" -- "*" Transaccion : guarda<
+Banco "1" -- "*" Persona : registra<
+Registro "1" -- "1    " Cuenta : >guarda
+
+@enduml
