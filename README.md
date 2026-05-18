@@ -35,10 +35,10 @@ src/models/
 - **Cliente**: Hereda de Persona, representa clientes del banco
 - **Empleado**: Hereda de Persona, representa empleados del banco
 - **Cuenta**: Clase base abstracta para las cuentas bancarias
-- **CajaDeAhorro**: Tipo de cuenta de ahorro con beneficios especiales
+- **CajaDeAhorro**: Tipo de cuenta de ahorro. (caja de ahorro en pesos y dolares)
 - **Credito**: Gestión de créditos otorgados a clientes
 - **Transaccion**: Registro de cada transacción realizada
-- **Registro**: Sistema centralizado de registro de operaciones (datos de la cuenta y transacciones)
+- **Registro**: Registro con archivo .txt (datos de la cuenta y transacciones)
 
 ## Relaciones entre Clases
 
@@ -80,7 +80,7 @@ Consulte el archivo `diagramaClasesUML.wsd` para visualizar la estructura de cla
 - El proyecto implementa herencia.
 - Se utiliza encapsulación para proteger los datos sensibles.
 - El sistema valida todas las operaciones.
-- Se mantiene un registro centralizado de todas las transacciones
+- Se mantiene un registro centralizado de todas las transacciones (archivos .txt)
 
 ## Licencia
 Proyecto académico
