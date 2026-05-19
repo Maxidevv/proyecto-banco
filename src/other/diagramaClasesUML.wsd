@@ -2,7 +2,7 @@
 skinparam linetype ortho
 
 class Persona {
-    -int dni
+    -String dni
     -String nombre
     -int añoIngreso
     -boolean estado
@@ -18,7 +18,7 @@ class Empleado {
 }
 
 class Cuenta {
-    -int numeroCuenta
+    -String numeroCuenta
     -LocalDate fechaApertura
 }
 
@@ -36,7 +36,7 @@ class Transaccion {
     -String tipo
     -float monto
     -LocalDateTime fecha
-    -int numeroCuenta
+    -String numeroCuenta
     -String moneda
 }
 
@@ -59,7 +59,7 @@ Cuenta <|-- Credito
 Cuenta "*" -- "1" Persona : tiene
 CajaDeAhorro "1  " -- "*" Transaccion : tiene<
 Registro "1" -- "*" Transaccion : guarda<
-Banco "1" -- "*" Persona : registra<
+Banco "1" -- "*" Persona : administra<
 Registro "1" -- "1    " Cuenta : >guarda
 
 @enduml
