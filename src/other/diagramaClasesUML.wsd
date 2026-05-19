@@ -29,6 +29,7 @@ class CajaDeAhorro {
 
 class Credito {
     -String tipoTarjeta
+    -int limiteCredito
 }
 
 class Transaccion {
