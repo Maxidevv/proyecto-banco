@@ -5,8 +5,8 @@ import java.time.LocalDate;
 /**
  * Representa una cuenta de caja de ahorro
  * 
- * Permite guardar dinero en dos monedas, pesos y dólares
- * Cada cliente puede realizar operaciones de deposito y retiro en ambas monedas
+ * Permite guardar plata en dos monedas, pesos y dolares
+ * Cada cliente puede realizar operaciones de deposito y retiro en las dos monedas
  * 
  * @author Maxi Moncada, Matias Moyano, Maximo Zalazar, Darull Farid
  * @version 1.3
@@ -14,17 +14,17 @@ import java.time.LocalDate;
  */
 public class CajaDeAhorro extends Cuenta {
 
-    /** Cantidad de dinero ahorrado en pesos */
+    /** Cantidad de plata ahorrada en pesos */
     private float pesos;
     
-    /** Cantidad de dinero ahorrado en dolares */
+    /** Cantidad de plata ahorrada en dolares */
     private float dolares;
 
     /**
      * Constructor
      * 
-     * @param numeroCuenta es el identificador único de la cuenta
-     * @param fechaApertura es la fecha en que se abrió la cuenta
+     * @param numeroCuenta es el identificador unico de la cuenta
+     * @param fechaApertura es la fecha en que se abrio la cuenta
      * @param pesos es saldo en pesos
      * @param dolares es el saldo en dolares
      */
