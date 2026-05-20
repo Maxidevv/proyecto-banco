@@ -89,4 +89,4 @@ Proyecto académico
 - Maxi Moncada (maxilucianomoncada@gmail.com)
 - Matias Moyano (matiasmoyanobustos@gmail.com)
 - Maximo Zalazar (mzalazar474@alumnos.iua.edu.ar)
-- Farid Darull (pone el mail panita farid)
+- Farid Darull (fdarrull302@alumnos.iua.edu.ar)
