@@ -1,3 +1,4 @@
+package models;
 /**
  * Representa a un empleado dentro del sistema.
  * Hereda los atributos y métodos de la clase Persona.
@@ -6,8 +7,6 @@
  * @version 1.0
  * @see Persona
  */
-
-package models;
 
 public class Empleado extends Persona {
 
