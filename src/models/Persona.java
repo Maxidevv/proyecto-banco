@@ -1,4 +1,4 @@
-package models;
+package src.models;
 /**
  * Representa a una persona dentro del sistema.
  * Actúa como clase padre de Empleado y Cliente.

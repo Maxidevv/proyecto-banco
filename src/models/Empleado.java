@@ -1,4 +1,4 @@
-package models;
+package src.models;
 /**
  * Representa a un empleado dentro del sistema.
  * Hereda los atributos y métodos de la clase Persona.

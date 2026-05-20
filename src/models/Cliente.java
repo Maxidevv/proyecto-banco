@@ -1,4 +1,4 @@
-package models;
+package src.models;
 
 /**
  * Representa a un cliente dentro del sistema.

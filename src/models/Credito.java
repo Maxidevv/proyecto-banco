@@ -77,16 +77,16 @@ public class Credito extends Cuenta {
      * @throws IllegalArgumentException si el tipo de cliente no es valido
      */
     public static Credito crearTarjetaSegunCliente(String tipoCliente, String numeroCuenta, LocalDate fechaApertura) {
-        if (tipoCliente == null || tipoCliente.isEmpty()) {
+        if (tipoCliente.isEmpty()) {
             throw new IllegalArgumentException("El tipo de cliente no puede estar vacio");
         }
 
         switch (tipoCliente) {
-            case "Plata":
+            case "plata":
                 return null; // Sin acceso a tarjeta de crédito
-            case "Oro":
+            case "oro":
                 return new Credito("Credix", numeroCuenta, fechaApertura, 250000);
-            case "Platino":
+            case "platino":
                 return new Credito("Premium", numeroCuenta, fechaApertura, 500000);
             default:
                 throw new IllegalArgumentException("Tipo de cliente no valido: " + tipoCliente);
@@ -100,6 +100,6 @@ public class Credito extends Cuenta {
      * @return true si el cliente tiene acceso, false en caso contrario
      */
     public static boolean tieneAccesoTarjeta(String tipoCliente) {
-        return !"Plata".equals(tipoCliente);
+        return tipoCliente != null && !"plata".equals(tipoCliente); // Devuelve false si es "plata" o "null" para verificacion rapida
     }
 }
