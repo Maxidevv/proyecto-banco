@@ -39,21 +39,75 @@ public class Transaccion {
         this.moneda = moneda.toLowerCase();
     }
 
+    /**
+     * Obtiene el identificador de la transaccion
+     * @return identificador de la transaccion
+     */
     public int getId() { return id; }
+
+    /**
+     * Establece el identificador de la transaccion
+     * @param id identificador de la transaccion
+     */
     public void setId(int id) { this.id = id; }
 
+    /**
+     * Obtiene el tipo de transaccion
+     * @return tipo de transaccion
+     */
     public String getTipo() { return tipo; }
+
+    /**
+     * Establece el tipo de transaccion
+     * @param tipo tipo de transaccion
+     */
     public void setTipo(String tipo) { this.tipo = tipo.toLowerCase(); }
 
+    /**
+     * Obtiene el monto de la transaccion
+     * @return monto de la transaccion
+     */
     public float getMonto() { return monto; }
-    public void setMonto(float monto) { this.monto = monto; }
 
+    /**
+     * Establece el monto de la transaccion
+     * @param monto monto de la transaccion
+     */
+    public void setMonto(float monto) { this.monto = monto; }
+    
+    /**
+     * Obtiene la fecha y hora de la transaccion
+     * @return fecha y hora de la transaccion
+     */
     public LocalDateTime getFecha() { return fecha; }
+
+    /**
+     * Establece la fecha y hora de la transaccion
+     * @param fecha fecha y hora de la transaccion
+     */
     public void setFecha(LocalDateTime fecha) { this.fecha = fecha; }
 
+    /**
+     * Obtiene el numero de la cuenta
+     * @return numero de la cuenta
+     */
     public String getNumeroCuenta() { return numeroCuenta; }
+
+    /**
+     * Establece el numero de la cuenta
+     * @param numeroCuenta numero de la cuenta
+     */
     public void setNumeroCuenta(String numeroCuenta) { this.numeroCuenta = numeroCuenta; }
 
+    /**
+     * Obtiene la moneda de la transaccion
+     * @return moneda de la transaccion
+     */
     public String getMoneda() { return moneda; }
+
+    /**
+     * Establece la moneda de la transaccion
+     * @param moneda moneda de la transaccion
+     */
     public void setMoneda(String moneda) { this.moneda = moneda.toLowerCase(); }
 }
