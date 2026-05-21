@@ -131,10 +131,10 @@ public class CajaDeAhorro extends Cuenta {
      * @return el saldo en la moneda solicitada, o 0 si la moneda no es valida
      */
     public float getSaldoTotal(String moneda) {
-        if ("pesos".equalsIgnoreCase(moneda)) {
+        if ("pesos".equalsIgnoreCase(moneda) || "peso".equalsIgnoreCase(moneda)) {
             return pesos;
         }
-        if ("dolares".equalsIgnoreCase(moneda)) {
+        if ("dolares".equalsIgnoreCase(moneda) || "dolar".equalsIgnoreCase(moneda)) {
             return dolares;
         }
         return 0;
