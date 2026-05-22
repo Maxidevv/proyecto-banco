@@ -1,9 +1,10 @@
 package src.models;
+
 /**
- * Representa a un empleado dentro del sistema.
- * Hereda los atributos y métodos de la clase Persona.
+ * Representa a un empleado dentro del sistema
+ * Hereda los atributos y metodos de la clase Persona
  *
- * @author Matías, Maxi, Máximo, Farid
+ * @author Matias, Maxi, Maximo, Farid
  * @version 1.0
  * @see Persona
  */
@@ -13,11 +14,11 @@ public class Empleado extends Persona {
     private String tipoEmpleado;
 
     /**
-     * Constructor de la clase Empleado.
+     * Constructor de la clase Empleado
      *
-     * @param dni          número de documento del empleado
+     * @param dni          numero de documento del empleado
      * @param nombre       nombre completo del empleado
-     * @param añoIngreso   año en el que ingresó al sistema
+     * @param añoIngreso   año en el que ingreso al sistema
      * @param estado       estado actual (true = activo, false = inactivo)
      * @param tipoEmpleado tipo de empleado
      */
@@ -27,13 +28,13 @@ public class Empleado extends Persona {
     }
 
     /**
-     * Retorna el tipo de empleado.
+     * Retorna el tipo de empleado
      * @return tipo de empleado
      */
     public String getTipoEmpleado(){return tipoEmpleado;}
 
     /**
-     * Establece el tipo de empleado.
+     * Establece el tipo de empleado
      * @param tipoEmpleado nuevo tipo de empleado
      */
     public void setTipoEmpleado(String tipoEmpleado){this.tipoEmpleado = tipoEmpleado;}

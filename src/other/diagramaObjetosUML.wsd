@@ -1,0 +1,85 @@
+@startuml DiagramaObjetos
+
+title Diagrama de Objetos
+
+object banco {
+    personas: List
+    cajas: List
+    creditos: List
+    transacciones: List
+    idTransaccion: 3
+}
+
+object cliente1 {
+    dni: "12345678"
+    nombre: "Maxi Moncada"
+    tipoCliente: "oro"
+    estado: true
+}
+
+object cliente2 {
+    dni: "87654321"
+    nombre: "Matias Moyano"
+    tipoCliente: "platino"
+    estado: true
+}
+
+object cliente3 {
+    dni: "11111111"
+    nombre: "Maximo Zalazar"
+    tipoCliente: "plata"
+    estado: true
+}
+
+object empleado1 {
+    dni: "49192491"
+    nombre: "Farid Darull"
+    tipoEmpleado: "Gestor"
+    estado: true
+}
+
+object cuenta1 {
+    numeroCuenta: "001"
+    saldoPesos: 5500
+    saldoDolares: 1000
+}
+
+object cuenta2 {
+    numeroCuenta: "002"
+    saldoPesos: 10000
+    saldoDolares: 5000
+}
+
+object cuenta3 {
+    numeroCuenta: "003"
+    saldoPesos: 2000
+    saldoDolares: 500
+}
+
+object transaccion1 {
+    id: 1
+    tipo: "deposito"
+    monto: 1000
+    numeroCuenta: "001"
+    moneda: "pesos"
+}
+
+object transaccion2 {
+    id: 2
+    tipo: "retiro"
+    monto: 500
+    numeroCuenta: "001"
+    moneda: "pesos"
+}
+
+banco --> cliente1 : almacena
+banco --> cliente2 : almacena
+banco --> cliente3 : almacena
+banco --> empleado1 : almacena
+banco --> cuenta1 : almacena
+banco --> cuenta2 : almacena
+banco --> cuenta3 : almacena
+banco --> transaccion1 : registra
+banco --> transaccion2 : registra
+
+@enduml
