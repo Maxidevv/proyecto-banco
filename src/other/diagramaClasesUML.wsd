@@ -48,6 +48,12 @@ class Registro {
 
 class Banco {
     -ArrayList<Persona> personas
+    -ArrayList<CajaDeAhorros> cajas
+    -ArrayList<Credito> creditos
+    -ArrayList<Transaccion> transacciones
+    -int idTransaccion
+
+
 }
 
 ' Relaciones de herencia
