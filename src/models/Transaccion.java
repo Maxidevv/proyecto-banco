@@ -1,113 +1,97 @@
 package src.models;
 import java.time.LocalDateTime;
+import java.util.Random;
 
-/**
- * Representa una transaccion bancaria de caja de ahorro
- * 
- * Registra operaciones de deposito y retiro en pesos o dolares.
- * 
- * @author Maxi Moncada, Mayias Moyano, Maximo Zalazar, Farid Darull
- * @version 1.0
- * @see CajaDeAhorro
- * @see Registro
- */
 public class Transaccion {
-
-    private int id;
-    private String tipo; // "deposito" o "retiro"
-    private float monto;
+    private Integer id;
+    private String tipo;
+    private Float monto;
     private LocalDateTime fecha;
     private String numeroCuenta;
-    private String moneda; // "pesos" o "dolares"
+    private String moneda;
+    private CajaDeAhorro cajaDeAhorro;
 
+    private Random rd = new Random();
     /**
-     * Constructor
+     * Construye una transaccion validando el tipo y determinando la moneda 
+     * segun los saldos actuales de la caja de ahorro
      * 
-     * @param id identificador unico de la transaccion
-     * @param tipo tipo de transaccion (deposito/retiro)
-     * @param monto cantidad movida
-     * @param fecha fecha y hora de la transaccion
-     * @param numeroCuenta numero de la cuenta
-     * @param moneda moneda (pesos/dolares)
+     * @param tipo el tipo de transaccion, debe ser "deposito" o "retiro".
+     * @param cajaDeAhorro la caja de ahorro asociada a la transaccion
+     * @param monto el monto de la transaccion, debe ser mayor a 0.
+     * 
+     * @throws IllegalArgumentException si el tipo no es "deposito" o "retiro",
+     *  o si el monto es menor o igual a 0.
      */
-    public Transaccion(int id, String tipo, float monto, LocalDateTime fecha, String numeroCuenta, String moneda) {
+    
+    public Transaccion(String tipo,CajaDeAhorro cajaDeAhorro, Float monto){
+        this.cajaDeAhorro = cajaDeAhorro;
+        Integer id = rd.nextInt(1000);
         this.id = id;
-        this.tipo = tipo.toLowerCase();
+
+        if(!tipo.equals("deposito") && !tipo.equals("retiro")){
+            throw new IllegalArgumentException("Tipo invalido: debe ser 'deposito' o 'retiro'");
+        }
+        this.tipo = tipo;
+
+        if(monto <= 0){
+            throw new IllegalArgumentException("Monto invalido: debe ser mayor a 0");
+        }
         this.monto = monto;
-        this.fecha = fecha;
-        this.numeroCuenta = numeroCuenta;
-        this.moneda = moneda.toLowerCase();
+
+        this.fecha = LocalDateTime.now();
+        this.numeroCuenta = cajaDeAhorro.getNumeroCuenta();
+
+        if(cajaDeAhorro.getPesos() > 0 && cajaDeAhorro.getDolares() == 0){
+            //cuando tiene pesos y no tiene dolares
+            this.moneda = "pesos";
+        } else if(cajaDeAhorro.getDolares() > 0 && cajaDeAhorro.getPesos() == 0){
+            //cuando tiene dolares y no tiene pesos
+            this.moneda = "dolares";
+        }else{
+            //si tiene ambas o no tiene ninguna se la considera hibrida
+            this.moneda = "hibrida";
+        }
+
+    }
+    public Integer getId(){
+        return id;
+    }
+    public String getTipo(){
+        return tipo;
+    }
+    public Float getMonto(){
+        return monto;
+    }
+    public String getMoneda(){
+        return moneda;
+    }
+    public String getNumeroCuenta(){
+        return numeroCuenta;
     }
 
-    /**
-     * Obtiene el identificador de la transaccion
-     * @return identificador de la transaccion
-     */
-    public int getId() { return id; }
-
-    /**
-     * Establece el identificador de la transaccion
-     * @param id identificador de la transaccion
-     */
-    public void setId(int id) { this.id = id; }
-
-    /**
-     * Obtiene el tipo de transaccion
-     * @return tipo de transaccion
-     */
-    public String getTipo() { return tipo; }
-
-    /**
-     * Establece el tipo de transaccion
-     * @param tipo tipo de transaccion
-     */
-    public void setTipo(String tipo) { this.tipo = tipo.toLowerCase(); }
-
-    /**
-     * Obtiene el monto de la transaccion
-     * @return monto de la transaccion
-     */
-    public float getMonto() { return monto; }
-
-    /**
-     * Establece el monto de la transaccion
-     * @param monto monto de la transaccion
-     */
-    public void setMonto(float monto) { this.monto = monto; }
-    
-    /**
-     * Obtiene la fecha y hora de la transaccion
-     * @return fecha y hora de la transaccion
-     */
-    public LocalDateTime getFecha() { return fecha; }
-
-    /**
-     * Establece la fecha y hora de la transaccion
-     * @param fecha fecha y hora de la transaccion
-     */
-    public void setFecha(LocalDateTime fecha) { this.fecha = fecha; }
-
-    /**
-     * Obtiene el numero de la cuenta
-     * @return numero de la cuenta
-     */
-    public String getNumeroCuenta() { return numeroCuenta; }
-
-    /**
-     * Establece el numero de la cuenta
-     * @param numeroCuenta numero de la cuenta
-     */
-    public void setNumeroCuenta(String numeroCuenta) { this.numeroCuenta = numeroCuenta; }
-
-    /**
-     * Obtiene la moneda de la transaccion
-     * @return moneda de la transaccion
-     */
-    public String getMoneda() { return moneda; }
-
-    /**
-     * Establece la moneda de la transaccion
-     * @param moneda moneda de la transaccion
-     */
-    public void setMoneda(String moneda) { this.moneda = moneda.toLowerCase(); }
+    public void setTipo(String tipo){
+        if(!tipo.equals("deposito") && !tipo.equals("retiro")){
+            throw new IllegalArgumentException("Tipo invalido: debe ser 'deposito' o 'retiro'");
+        }
+        this.tipo = tipo;
+    }
+    public void setMonto(Float monto){
+        if(monto <= 0){
+            throw new IllegalArgumentException("Monto invalido: debe ser mayor a 0");
+        }
+        this.monto = monto;
+    }
+    public void setFecha(LocalDateTime fecha){
+        this.fecha = fecha;
+    }
+    public void setMoneda(String moneda){
+        if(!moneda.equals("pesos") && !moneda.equals("dolares") && !moneda.equals("hibrida")){
+            throw new IllegalArgumentException("Moneda invalida: debe ser 'pesos', 'dolares' o 'hibrida'");
+        }
+        this.moneda = moneda;
+    }
+    public void setCajaDeAhorro(CajaDeAhorro cajaDeAhorro){
+        this.cajaDeAhorro = cajaDeAhorro;
+    }
 }

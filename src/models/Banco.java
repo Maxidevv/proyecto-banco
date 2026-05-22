@@ -10,9 +10,9 @@ import java.util.ArrayList;
 public class Banco {
     
     private ArrayList<Persona> personas;
+    private ArrayList<Transaccion> transacciones;
     private ArrayList<CajaDeAhorro> cajas;
     private ArrayList<Credito> creditos;
-    private ArrayList<Transaccion> transacciones;
     private int idTransaccion;
 
     public Banco() {
@@ -95,7 +95,7 @@ public class Banco {
         System.out.println("Clientes agregados\n");
         
         // Empleado
-        Empleado empleado = new Empleado("49192491", "Farid Darull", 2020, true, "Gestor");
+        Empleado empleado = new Empleado("49192491", "Farid Darrull", 2020, true, "Gestor");
         banco.agregarPersona(empleado);
         System.out.println("Empleado creado\n");
         
