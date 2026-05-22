@@ -66,7 +66,7 @@ Cuenta <|-- Credito
 Cuenta "*" -- "1" Persona : tiene
 CajaDeAhorro "1  " -- "*" Transaccion : tiene<
 Registro "1" -- "*" Transaccion : guarda<
-Banco "1" -- "*" Persona : administra<
-Registro "1" -- "1    " Cuenta : >guarda
+Banco "1" -- "*" Persona : >administra
+Registro "1" -- "1    " Cuenta : guarda<
 
 @enduml
